@@ -103,3 +103,27 @@ if ok_term and term and term.opacity and term.opacity < 1 then
         opacity = term.opacity,
     })
 end
+
+hl.window_rule({
+    name  = "startup-tabby-ws1",
+    match = { class = "tabby" },
+    workspace = "1",
+})
+
+hl.window_rule({
+    name  = "startup-firefox-ws3",
+    match = { class = "firefox" },
+    workspace = "3",
+})
+
+hl.window_rule({
+    name  = "startup-discord-ws4",
+    match = { class = "discord" },
+    workspace = "4",
+})
+
+hl.window_rule({
+    name  = "startup-spotify-ws4",
+    match = { class = "Spotify" },
+    workspace = "4",
+})

@@ -35,4 +35,8 @@ hl.on("hyprland.start", function ()
   -- возвращалась тема из theme.conf, положенного установщиком.
   hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/switch_theme.sh --restore")
   hl.exec_cmd("cliphist list | tail -n +501 | cliphist delete")
+  hl.exec_cmd("tabby")
+  hl.exec_cmd("firefox")
+  hl.exec_cmd("discord")
+  hl.exec_cmd("spotify-launcher")
 end)
