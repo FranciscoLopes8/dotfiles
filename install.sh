@@ -1,0 +1,172 @@
+#!/usr/bin/env bash
+#
+# Dotfiles bootstrap installer
+# Clones alongside this script's repo checkout and sets up a fresh Arch
+# machine to match: packages, shell, fonts, configs, keyboard layout.
+#
+set -e
+
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BACKUP_SUFFIX=".bak-$(date +%Y%m%d-%H%M%S)"
+
+info()  { echo -e "\033[1;34m==>\033[0m $1"; }
+warn()  { echo -e "\033[1;33m!!\033[0m $1"; }
+
+if ! command -v pacman &>/dev/null; then
+    echo "This installer targets Arch Linux (pacman not found). Aborting."
+    exit 1
+fi
+
+if [ "$EUID" -eq 0 ]; then
+    echo "Don't run this as root — it uses sudo where needed. Aborting."
+    exit 1
+fi
+
+info "Installing official repo packages..."
+
+PACMAN_PACKAGES=(
+    hyprland
+    foot
+    kitty
+    fish
+    zsh
+    nano
+    fastfetch
+    btop
+    atuin
+    lsd
+    eza
+    git
+    base-devel
+    ttf-jetbrains-mono-nerd
+    quickshell
+    gtk3
+    gtk4
+    xdg-desktop-portal-hyprland
+)
+
+sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"
+
+if ! command -v yay &>/dev/null; then
+    info "yay not found, installing..."
+    BUILD_DIR="$(mktemp -d)"
+    git clone https://aur.archlinux.org/yay.git "$BUILD_DIR/yay"
+    (cd "$BUILD_DIR/yay" && makepkg -si --noconfirm)
+    rm -rf "$BUILD_DIR"
+else
+    info "yay already installed, skipping."
+fi
+
+info "Installing AUR packages..."
+
+AUR_PACKAGES=(
+    tabby-bin
+    asusctl
+    rog-control-center
+)
+
+yay -S --needed --noconfirm "${AUR_PACKAGES[@]}" || warn "Some AUR packages failed to install — check output above."
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    info "Installing oh-my-zsh..."
+    RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    info "oh-my-zsh already installed, skipping."
+fi
+
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+mkdir -p "$ZSH_CUSTOM/plugins"
+
+clone_plugin() {
+    local name="$1" url="$2"
+    if [ ! -d "$ZSH_CUSTOM/plugins/$name" ]; then
+        info "Cloning zsh plugin: $name"
+        git clone --depth=1 "$url" "$ZSH_CUSTOM/plugins/$name"
+    fi
+}
+
+clone_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions"
+clone_plugin "you-should-use"      "https://github.com/MichaelAquilina/zsh-you-should-use"
+clone_plugin "zsh-bat"             "https://github.com/fdellwing/zsh-bat"
+
+if [ "$SHELL" != "$(command -v zsh)" ]; then
+    info "Setting zsh as default login shell (you may be asked for your password)..."
+    chsh -s "$(command -v zsh)"
+else
+    info "zsh is already the default shell."
+fi
+
+info "Enabling asusd service..."
+sudo systemctl enable --now asusd.service || warn "Could not enable asusd — check asusctl install."
+
+backup_and_copy() {
+    local src="$1"
+    local dest="$2"
+    if [ ! -e "$src" ]; then
+        return
+    fi
+    if [ -e "$dest" ] && [ ! -L "$dest" ]; then
+        info "Backing up $dest -> $dest$BACKUP_SUFFIX"
+        mv "$dest" "$dest$BACKUP_SUFFIX"
+    elif [ -L "$dest" ]; then
+        rm "$dest"
+    fi
+    mkdir -p "$(dirname "$dest")"
+    cp -r "$src" "$dest"
+    echo "Installed $dest"
+}
+
+info "Copying config files..."
+mkdir -p "$HOME/.config" "$HOME/.local/bin"
+
+backup_and_copy "$DOTFILES_DIR/hypr"       "$HOME/.config/hypr"
+backup_and_copy "$DOTFILES_DIR/panacea"    "$HOME/.config/panacea"
+backup_and_copy "$DOTFILES_DIR/quickshell" "$HOME/.config/quickshell"
+backup_and_copy "$DOTFILES_DIR/foot"       "$HOME/.config/foot"
+backup_and_copy "$DOTFILES_DIR/kitty"      "$HOME/.config/kitty"
+backup_and_copy "$DOTFILES_DIR/tabby"      "$HOME/.config/tabby"
+backup_and_copy "$DOTFILES_DIR/fish"       "$HOME/.config/fish"
+backup_and_copy "$DOTFILES_DIR/fastfetch"  "$HOME/.config/fastfetch"
+backup_and_copy "$DOTFILES_DIR/atuin"      "$HOME/.config/atuin"
+backup_and_copy "$DOTFILES_DIR/btop"       "$HOME/.config/btop"
+backup_and_copy "$DOTFILES_DIR/gtk-3.0"    "$HOME/.config/gtk-3.0"
+backup_and_copy "$DOTFILES_DIR/gtk-4.0"    "$HOME/.config/gtk-4.0"
+backup_and_copy "$DOTFILES_DIR/zsh/.zshrc"    "$HOME/.zshrc"
+backup_and_copy "$DOTFILES_DIR/nano/.nanorc"  "$HOME/.nanorc"
+
+if [ -f "$DOTFILES_DIR/mimeapps.list" ]; then
+    cp "$DOTFILES_DIR/mimeapps.list" "$HOME/.config/mimeapps.list"
+fi
+
+if [ -d "$DOTFILES_DIR/bin" ]; then
+    cp -r "$DOTFILES_DIR/bin/." "$HOME/.local/bin/"
+    chmod +x "$HOME/.local/bin/"* 2>/dev/null || true
+fi
+
+echo ""
+info "Keyboard layout setup"
+read -rp "Enter your Hyprland/Wayland keyboard layout code (e.g. pt, us, ru) [pt]: " KB_LAYOUT
+KB_LAYOUT="${KB_LAYOUT:-pt}"
+
+INPUT_LUA="$HOME/.config/hypr/lua/input.lua"
+if [ -f "$INPUT_LUA" ]; then
+    sed -i "s/kb_layout\s*=\s*\"[^\"]*\"/kb_layout  = \"$KB_LAYOUT\"/" "$INPUT_LUA"
+    echo "Set kb_layout = \"$KB_LAYOUT\" in $INPUT_LUA"
+else
+    warn "$INPUT_LUA not found, skipping Hyprland keyboard layout"
+fi
+
+read -rp "Also set the console/TTY keymap to match? [y/N]: " SET_CONSOLE
+if [[ "$SET_CONSOLE" =~ ^[Yy]$ ]]; then
+    read -rp "Enter console keymap (e.g. pt-latin9, us) [pt-latin9]: " CONSOLE_KEYMAP
+    CONSOLE_KEYMAP="${CONSOLE_KEYMAP:-pt-latin9}"
+    sudo localectl set-keymap "$CONSOLE_KEYMAP"
+    echo "Console keymap set to $CONSOLE_KEYMAP"
+fi
+
+echo ""
+info "All done."
+echo "  - Log out and back in (or reboot) for the shell change and Hyprland to take effect."
+echo "  - Run 'hyprctl reload' if you're already inside Hyprland."
+echo "  - Run 'asusctl led-mode -h' to see keyboard lighting options."
