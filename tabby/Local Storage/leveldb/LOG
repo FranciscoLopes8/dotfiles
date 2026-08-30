@@ -1,0 +1,9 @@
+2026/08/30-20:59:26.381 160f3 Reusing MANIFEST /home/xico/.config/tabby/Local Storage/leveldb/MANIFEST-000001
+2026/08/30-20:59:26.386 160f3 Recovering log #71
+2026/08/30-20:59:26.386 160f3 Reusing old log /home/xico/.config/tabby/Local Storage/leveldb/000071.log 
+2026/08/30-21:09:27.056 160f6 Level-0 table #75: started
+2026/08/30-21:09:27.065 160f6 Level-0 table #75: 18539 bytes OK
+2026/08/30-21:09:27.067 160f6 Delete type=0 #71
+2026/08/30-21:13:27.055 160f6 Level-0 table #77: started
+2026/08/30-21:13:27.064 160f6 Level-0 table #77: 16628 bytes OK
+2026/08/30-21:13:27.066 160f6 Delete type=0 #74

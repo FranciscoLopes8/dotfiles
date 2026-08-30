@@ -1,0 +1,59 @@
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"/opt/Tabby/tabby","_":[],"sandbox":false},"cwd":"/home/xico","secondInstance":false}
+debug: Setting language to
+info: Starting profile User default {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"","id":"local:default","isBuiltin":true,"isTemplate":false,"name":"User default","options":{"args":["--login"],"command":"/usr/bin/zsh","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"shellType":"unix","width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 235x53
+info: Starting profile User default {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"","id":"local:default","isBuiltin":true,"isTemplate":false,"name":"User default","options":{"args":["--login"],"command":"/usr/bin/zsh","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"shellType":"unix","width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 235x53
+info: Destroying
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 234x53
+debug: Resizing to 233x53
+debug: Resizing to 234x53
+debug: Resizing to 233x53
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"/opt/Tabby/tabby","_":[],"sandbox":false},"cwd":"/home/xico","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 222x53
+debug: Resizing to 233x53
+debug: Resizing to 233x47
+debug: Resizing to 233x53
+info: CLI arguments received: {"argv":{"$0":"/opt/Tabby/tabby","_":[],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"disable-http-cache":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"ozone-platform":"wayland","ozonePlatform":"wayland","sandbox":false},"cwd":"/home/xico","secondInstance":true}
+info: CLI handler matched:
+debug: Resizing to 113x53
+info: v
+debug: Setting language to
+debug: Resizing to 233x53
+info: CLI arguments received: {"argv":{"$0":"/opt/Tabby/tabby","_":[],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"disable-http-cache":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"ozone-platform":"wayland","ozonePlatform":"wayland","sandbox":false},"cwd":"/home/xico","secondInstance":true}
+info: CLI handler matched:
+info: v

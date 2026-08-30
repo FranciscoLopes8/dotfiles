@@ -1,0 +1,158 @@
+2026/08/30-19:48:53.227 a08e Creating DB /home/xico/.config/tabby/Local Storage/leveldb since it was missing.
+2026/08/30-19:48:53.236 a08e Reusing MANIFEST /home/xico/.config/tabby/Local Storage/leveldb/MANIFEST-000001
+2026/08/30-19:55:55.059 a08e Level-0 table #5: started
+2026/08/30-19:55:55.068 a08e Level-0 table #5: 28490 bytes OK
+2026/08/30-19:55:55.070 a08e Delete type=0 #3
+2026/08/30-19:56:55.060 a08e Level-0 table #7: started
+2026/08/30-19:56:55.069 a08e Level-0 table #7: 19016 bytes OK
+2026/08/30-19:56:55.072 a08e Delete type=0 #4
+2026/08/30-19:57:55.056 a08e Level-0 table #9: started
+2026/08/30-19:57:55.066 a08e Level-0 table #9: 18972 bytes OK
+2026/08/30-19:57:55.068 a08e Delete type=0 #6
+2026/08/30-19:59:50.039 a08e Level-0 table #11: started
+2026/08/30-19:59:50.049 a08e Level-0 table #11: 19066 bytes OK
+2026/08/30-19:59:50.051 a08e Delete type=0 #8
+2026/08/30-20:00:31.891 a08e Level-0 table #13: started
+2026/08/30-20:00:31.901 a08e Level-0 table #13: 19947 bytes OK
+2026/08/30-20:00:31.903 a08e Delete type=0 #10
+2026/08/30-20:03:01.887 a08e Level-0 table #15: started
+2026/08/30-20:03:01.897 a08e Level-0 table #15: 20108 bytes OK
+2026/08/30-20:03:01.899 a08e Delete type=0 #12
+2026/08/30-20:03:01.900 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:03:01.902 a08e Generated table #16@0: 2 keys, 20108 bytes
+2026/08/30-20:03:01.902 a08e Compacted 4@0 + 1@1 files => 20108 bytes
+2026/08/30-20:03:01.904 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:03:01.905 a08e Delete type=2 #11
+2026/08/30-20:03:01.905 a08e Delete type=2 #13
+2026/08/30-20:03:01.905 a08e Delete type=2 #9
+2026/08/30-20:03:01.905 a08e Delete type=2 #7
+2026/08/30-20:03:01.905 a08e Delete type=2 #15
+2026/08/30-20:03:31.883 a08e Level-0 table #18: started
+2026/08/30-20:03:31.894 a08e Level-0 table #18: 20137 bytes OK
+2026/08/30-20:03:31.897 a08e Delete type=0 #14
+2026/08/30-20:43:01.886 a08e Level-0 table #20: started
+2026/08/30-20:43:01.895 a08e Level-0 table #20: 20593 bytes OK
+2026/08/30-20:43:01.897 a08e Delete type=0 #17
+2026/08/30-20:43:31.894 a08e Level-0 table #22: started
+2026/08/30-20:43:31.903 a08e Level-0 table #22: 20700 bytes OK
+2026/08/30-20:43:31.905 a08e Delete type=0 #19
+2026/08/30-20:44:31.878 a08e Level-0 table #24: started
+2026/08/30-20:44:31.887 a08e Level-0 table #24: 21475 bytes OK
+2026/08/30-20:44:31.889 a08e Delete type=0 #21
+2026/08/30-20:44:31.890 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:44:31.891 a08e Generated table #25@0: 2 keys, 21475 bytes
+2026/08/30-20:44:31.892 a08e Compacted 4@0 + 1@1 files => 21475 bytes
+2026/08/30-20:44:31.893 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:44:31.893 a08e Delete type=2 #22
+2026/08/30-20:44:31.893 a08e Delete type=2 #20
+2026/08/30-20:44:31.893 a08e Delete type=2 #16
+2026/08/30-20:44:31.894 a08e Delete type=2 #24
+2026/08/30-20:44:31.894 a08e Delete type=2 #18
+2026/08/30-20:45:01.888 a08e Level-0 table #27: started
+2026/08/30-20:45:01.891 a08e Level-0 table #27: 21728 bytes OK
+2026/08/30-20:45:01.893 a08e Delete type=0 #23
+2026/08/30-20:45:31.884 a08e Level-0 table #29: started
+2026/08/30-20:45:31.894 a08e Level-0 table #29: 21825 bytes OK
+2026/08/30-20:45:31.896 a08e Delete type=0 #26
+2026/08/30-20:47:01.889 a08e Level-0 table #31: started
+2026/08/30-20:47:01.899 a08e Level-0 table #31: 22301 bytes OK
+2026/08/30-20:47:01.902 a08e Delete type=0 #28
+2026/08/30-20:47:31.887 a08e Level-0 table #33: started
+2026/08/30-20:47:31.898 a08e Level-0 table #33: 22459 bytes OK
+2026/08/30-20:47:31.901 a08e Delete type=0 #30
+2026/08/30-20:47:31.902 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:47:31.904 a08e Generated table #34@0: 2 keys, 22459 bytes
+2026/08/30-20:47:31.904 a08e Compacted 4@0 + 1@1 files => 22459 bytes
+2026/08/30-20:47:31.906 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:47:31.906 a08e Delete type=2 #25
+2026/08/30-20:47:31.906 a08e Delete type=2 #33
+2026/08/30-20:47:31.906 a08e Delete type=2 #31
+2026/08/30-20:47:31.906 a08e Delete type=2 #29
+2026/08/30-20:47:31.906 a08e Delete type=2 #27
+2026/08/30-20:48:01.883 a08e Level-0 table #36: started
+2026/08/30-20:48:01.894 a08e Level-0 table #36: 22569 bytes OK
+2026/08/30-20:48:01.897 a08e Delete type=0 #32
+2026/08/30-20:48:31.881 a08e Level-0 table #38: started
+2026/08/30-20:48:31.891 a08e Level-0 table #38: 22632 bytes OK
+2026/08/30-20:48:31.892 a08e Delete type=0 #35
+2026/08/30-20:49:01.885 a08e Level-0 table #40: started
+2026/08/30-20:49:01.888 a08e Level-0 table #40: 23020 bytes OK
+2026/08/30-20:49:01.890 a08e Delete type=0 #37
+2026/08/30-20:50:01.886 a08e Level-0 table #42: started
+2026/08/30-20:50:01.896 a08e Level-0 table #42: 23087 bytes OK
+2026/08/30-20:50:01.898 a08e Delete type=0 #39
+2026/08/30-20:50:01.898 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:50:01.900 a08e Generated table #43@0: 2 keys, 23087 bytes
+2026/08/30-20:50:01.901 a08e Compacted 4@0 + 1@1 files => 23087 bytes
+2026/08/30-20:50:01.902 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:50:01.902 a08e Delete type=2 #40
+2026/08/30-20:50:01.903 a08e Delete type=2 #36
+2026/08/30-20:50:01.903 a08e Delete type=2 #34
+2026/08/30-20:50:01.903 a08e Delete type=2 #42
+2026/08/30-20:50:01.903 a08e Delete type=2 #38
+2026/08/30-20:50:31.879 a08e Level-0 table #45: started
+2026/08/30-20:50:31.890 a08e Level-0 table #45: 23410 bytes OK
+2026/08/30-20:50:31.894 a08e Delete type=0 #41
+2026/08/30-20:51:01.882 a08e Level-0 table #47: started
+2026/08/30-20:51:01.892 a08e Level-0 table #47: 23486 bytes OK
+2026/08/30-20:51:01.894 a08e Delete type=0 #44
+2026/08/30-20:51:31.881 a08e Level-0 table #49: started
+2026/08/30-20:51:31.890 a08e Level-0 table #49: 24838 bytes OK
+2026/08/30-20:51:31.896 a08e Delete type=0 #46
+2026/08/30-20:52:01.879 a08e Level-0 table #51: started
+2026/08/30-20:52:01.889 a08e Level-0 table #51: 24910 bytes OK
+2026/08/30-20:52:01.891 a08e Delete type=0 #48
+2026/08/30-20:52:01.891 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:52:01.893 a08e Generated table #52@0: 2 keys, 24910 bytes
+2026/08/30-20:52:01.893 a08e Compacted 4@0 + 1@1 files => 24910 bytes
+2026/08/30-20:52:01.894 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:52:01.895 a08e Delete type=2 #51
+2026/08/30-20:52:01.895 a08e Delete type=2 #49
+2026/08/30-20:52:01.895 a08e Delete type=2 #47
+2026/08/30-20:52:01.895 a08e Delete type=2 #45
+2026/08/30-20:52:01.895 a08e Delete type=2 #43
+2026/08/30-20:52:31.902 a08e Level-0 table #54: started
+2026/08/30-20:52:31.907 a08e Level-0 table #54: 23777 bytes OK
+2026/08/30-20:52:31.912 a08e Delete type=0 #50
+2026/08/30-20:53:01.897 a08e Level-0 table #56: started
+2026/08/30-20:53:01.905 a08e Level-0 table #56: 27676 bytes OK
+2026/08/30-20:53:01.908 a08e Delete type=0 #53
+2026/08/30-20:53:31.906 a08b Level-0 table #58: started
+2026/08/30-20:53:31.916 a08b Level-0 table #58: 27838 bytes OK
+2026/08/30-20:53:31.919 a08b Delete type=0 #55
+2026/08/30-20:54:01.899 a08e Level-0 table #60: started
+2026/08/30-20:54:01.907 a08e Level-0 table #60: 27428 bytes OK
+2026/08/30-20:54:01.910 a08e Delete type=0 #57
+2026/08/30-20:54:01.912 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:54:01.918 a08e Generated table #61@0: 2 keys, 27428 bytes
+2026/08/30-20:54:01.919 a08e Compacted 4@0 + 1@1 files => 27428 bytes
+2026/08/30-20:54:01.922 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:54:01.923 a08e Delete type=2 #60
+2026/08/30-20:54:01.923 a08e Delete type=2 #56
+2026/08/30-20:54:01.923 a08e Delete type=2 #58
+2026/08/30-20:54:01.924 a08e Delete type=2 #54
+2026/08/30-20:54:01.924 a08e Delete type=2 #52
+2026/08/30-20:54:31.902 a08b Level-0 table #63: started
+2026/08/30-20:54:31.908 a08b Level-0 table #63: 27033 bytes OK
+2026/08/30-20:54:31.911 a08b Delete type=0 #59
+2026/08/30-20:55:01.898 a08e Level-0 table #65: started
+2026/08/30-20:55:01.903 a08e Level-0 table #65: 26893 bytes OK
+2026/08/30-20:55:01.907 a08e Delete type=0 #62
+2026/08/30-20:55:31.900 a08e Level-0 table #67: started
+2026/08/30-20:55:31.903 a08e Level-0 table #67: 14691 bytes OK
+2026/08/30-20:55:31.905 a08e Delete type=0 #64
+2026/08/30-20:56:01.898 a08e Level-0 table #69: started
+2026/08/30-20:56:01.905 a08e Level-0 table #69: 14434 bytes OK
+2026/08/30-20:56:01.907 a08e Delete type=0 #66
+2026/08/30-20:56:01.908 a08e Compacting 4@0 + 1@1 files
+2026/08/30-20:56:01.910 a08e Generated table #70@0: 2 keys, 14434 bytes
+2026/08/30-20:56:01.911 a08e Compacted 4@0 + 1@1 files => 14434 bytes
+2026/08/30-20:56:01.912 a08e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-20:56:01.913 a08e Delete type=2 #69
+2026/08/30-20:56:01.913 a08e Delete type=2 #67
+2026/08/30-20:56:01.913 a08e Delete type=2 #61
+2026/08/30-20:56:01.913 a08e Delete type=2 #63
+2026/08/30-20:56:01.913 a08e Delete type=2 #65
+2026/08/30-20:59:15.904 a08e Level-0 table #72: started
+2026/08/30-20:59:15.906 a08e Level-0 table #72: 14368 bytes OK
+2026/08/30-20:59:15.908 a08e Delete type=0 #68
