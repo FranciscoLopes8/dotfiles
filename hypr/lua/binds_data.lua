@@ -21,7 +21,7 @@ return {
     ["pillPower"] = "CTRL + ALT + delete",
     ["pillRecord"] = "SUPER + P",
     ["pillSettings"] = "SUPER + I",
-    ["pillShortcuts"] = "SUPER + slash",
+    ["pillShortcuts"] = "SUPER + M",
     ["pillVault"] = "SUPER + SHIFT + P",
     ["pillWifi"] = "SUPER + SHIFT + W",
     ["screenOff"] = "SUPER + SHIFT + F12",

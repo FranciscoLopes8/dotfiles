@@ -72,14 +72,6 @@ hl.window_rule({
     center = true,
 })
 
-hl.window_rule({
-    name  = "spotify",
-    match = { class = "^(Spotify|spotify)$" },
-    float = true,
-    size  = "800 600",
-    center = true,
-    workspace = "special:magic silent",
-})
 
 -- Терминал теперь тайлится как обычное окно:
 -- первый занимает весь экран, второй встаёт рядом (layout dwindle).

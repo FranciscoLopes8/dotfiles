@@ -43,9 +43,29 @@ PACMAN_PACKAGES=(
     gtk3
     gtk4
     xdg-desktop-portal-hyprland
+    reflector
 )
 
 sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"
+
+info "Configuring reflector for automatic mirror updates..."
+
+REFLECTOR_CONF="/etc/xdg/reflector/reflector.conf"
+if [ -f "$REFLECTOR_CONF" ]; then
+    sudo tee "$REFLECTOR_CONF" > /dev/null << 'EOF'
+--save /etc/pacman.d/mirrorlist
+--protocol https
+--country Portugal
+--latest 5
+--sort rate
+--age 12
+EOF
+    sudo systemctl enable --now reflector.timer
+    sudo systemctl restart reflector.service
+    info "reflector configured and mirrorlist refreshed."
+else
+    warn "$REFLECTOR_CONF not found — reflector package may not have installed correctly, skipping mirror setup."
+fi
 
 if ! command -v yay &>/dev/null; then
     info "yay not found, installing..."
