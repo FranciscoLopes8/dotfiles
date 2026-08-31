@@ -81,8 +81,6 @@ info "Installing AUR packages..."
 
 AUR_PACKAGES=(
     tabby-bin
-    asusctl
-    rog-control-center
 )
 
 yay -S --needed --noconfirm "${AUR_PACKAGES[@]}" || warn "Some AUR packages failed to install — check output above."
@@ -117,8 +115,16 @@ else
     info "zsh is already the default shell."
 fi
 
-info "Enabling asusd service..."
-sudo systemctl enable --now asusd.service || warn "Could not enable asusd — check asusctl install."
+echo ""
+read -rp "Install ASUS ROG keyboard/lighting control (asusctl + rog-control-center)? Only relevant on ASUS laptops. [y/N]: " INSTALL_ASUS
+if [[ "$INSTALL_ASUS" =~ ^[Yy]$ ]]; then
+    info "Installing asusctl and rog-control-center..."
+    yay -S --needed --noconfirm asusctl rog-control-center || warn "Failed to install asusctl/rog-control-center — check output above."
+    info "Starting asusd service..."
+    sudo systemctl start asusd.service || warn "Could not start asusd — check asusctl install."
+else
+    info "Skipping ASUS ROG control tools."
+fi
 
 backup_and_copy() {
     local src="$1"
@@ -189,4 +195,4 @@ echo ""
 info "All done."
 echo "  - Log out and back in (or reboot) for the shell change and Hyprland to take effect."
 echo "  - Run 'hyprctl reload' if you're already inside Hyprland."
-echo "  - Run 'asusctl led-mode -h' to see keyboard lighting options."
+echo "  - If you installed ASUS ROG tools, run 'asusctl led-mode -h' to see keyboard lighting options."
