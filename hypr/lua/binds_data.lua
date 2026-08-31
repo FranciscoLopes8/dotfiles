@@ -31,5 +31,6 @@ return {
     ["terminalAlt"] = "SUPER + Return",
     ["themeSwitch"] = "SUPER + SHIFT + T",
     ["toggleSplit"] = "SUPER + J",
-    ["voxDictate"] = "Alt_R",
+    ["voxDictate"] = "",
+    ["vscode"] = "SUPER + B",
 }

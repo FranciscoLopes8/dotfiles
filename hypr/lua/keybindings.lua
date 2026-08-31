@@ -25,7 +25,7 @@ B("pillLauncher", mainMod .. " + A",             hl.dsp.exec_cmd(QS .. "launcher
 B("overview",     mainMod .. " + Tab",           hl.dsp.exec_cmd(QS .. "overview"))
 B("pillControls", mainMod .. " + Z",             hl.dsp.exec_cmd(QS .. "controls"))
 B("pillSettings", mainMod .. " + I",             hl.dsp.exec_cmd(QS .. "settings"))
-B("pillShortcuts",mainMod .. " + M",         hl.dsp.exec_cmd(QS .. "shortcuts"))
+B("pillShortcuts",mainMod .. " + M",             hl.dsp.exec_cmd(QS .. "shortcuts"))
 B("pillWifi",     mainMod .. " + SHIFT + W",     hl.dsp.exec_cmd(QS .. "wifi"))
 B("pillBt",       mainMod .. " + SHIFT + B",     hl.dsp.exec_cmd(QS .. "bluetooth"))
 B("pillClip",     mainMod .. " + V",             hl.dsp.exec_cmd(QS .. "clipboard"))
@@ -33,6 +33,7 @@ B("pillPower",    "CTRL + ALT + delete",         hl.dsp.exec_cmd(QS .. "powermen
 B("pillNotif",    mainMod .. " + SHIFT + N",     hl.dsp.exec_cmd(QS .. "notifications"))
 B("pillRecord",   mainMod .. " + P",             hl.dsp.exec_cmd(QS .. "record"))
 B("pillVault",    mainMod .. " + SHIFT + P",     hl.dsp.exec_cmd(QS .. "passwords"))
+B("vscode",       mainMod .. " + B",             hl.dsp.exec_cmd("code"))
 
 -- Голос в текст (voxtype): зажми клавишу — говоришь, отпустил — текст
 -- вставляется в активное поле. Одна клавиша, два бинда: нажатие запускает
@@ -48,12 +49,12 @@ pcall(function()
     local VOX = os.getenv("HOME") .. "/.config/panacea/scripts/voxtype.sh"
     local combo = ov["voxDictate"]
     if combo == nil or combo == "" or combo == "Alt_R" then
-        hl.bind("Alt_R", hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
-        hl.bind("Alt_R", hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
-        hl.bind("code:108", hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
-        hl.bind("code:108", hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
-        hl.bind("ISO_Level3_Shift", hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
-        hl.bind("ISO_Level3_Shift", hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
+       --  hl.bind("Alt_R", hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
+       --  hl.bind("Alt_R", hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
+       --  hl.bind("code:108", hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
+       --  hl.bind("code:108", hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
+       --  hl.bind("ISO_Level3_Shift", hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
+       --  hl.bind("ISO_Level3_Shift", hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
     else
         hl.bind(combo, hl.dsp.exec_cmd(VOX .. " start"), { description = "Voice to text", ignore_mods = true, locked = true })
         hl.bind(combo, hl.dsp.exec_cmd(VOX .. " stop"), { release = true, ignore_mods = true, locked = true })
