@@ -10,7 +10,7 @@ return {
     rounding = 12,
     rounding_power = 4.0,
     active_opacity = 1.0,
-    inactive_opacity = 0.90,
+    inactive_opacity = 1,
     shadow_enabled = false,
     shadow_range = 4,
     shadow_render_power = 3,
